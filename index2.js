@@ -19,7 +19,13 @@ function onClickBreeds(_event) {
     .then(toJson)
     .then(function(jsonResponse) {
       const breeds = jsonResponse.message;
-      console.log(breeds);
+      // console.log(breeds);
+      //PARA HACER: Extraer createLabel function
+      const label = document.createElement("label");
+      label.htmlFor = "pet-breed";
+      label.innerText = "Choose a breed";
+      // console.log(label);
+      document.querySelector("#breed-container").appendChild(label);
     });
   /*
     <section id="breed-container">
@@ -27,12 +33,6 @@ function onClickBreeds(_event) {
 
   <select id="pet-breed">
     <option value="">--Please choose an option--</option>
-    <option value="dog1">Chihuahua</option>
-    <option value="dog2">Dalmata</option>
-    <option value="dog3">Bullterrier</option>
-    <option value="dog4">Bulldog</option>
-    <option value="dog5">Rottweiler</option>
-    <option value="dog6">Husky</option>
   </select>
   </section>*/
 }
