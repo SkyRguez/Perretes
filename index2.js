@@ -2,6 +2,9 @@ start();
 
 function start() {
   document.querySelector(".add-doggo").addEventListener("click", onClick);
+  document
+    .querySelector(".list-doggo")
+    .addEventListener("click", onClickBreeds);
 }
 
 function onClick() {
@@ -10,9 +13,11 @@ function onClick() {
     .then(toJson)
     .then(toJsonResponse);
 }
+function onClickBreeds(_event) {
+  console.log(_event);
+}
 
 function toJson(apiResponse) {
-  //console.log(apiResponse.json());
   return apiResponse.json();
 }
 
