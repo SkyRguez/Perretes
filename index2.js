@@ -23,20 +23,24 @@ function onClickBreeds(_event) {
       //PARA HACER: Extraer createLabel function
       const label = document.createElement("label");
       label.htmlFor = "pet-breed";
-      label.innerText = "Choose a breed";
+      label.innerText = "🦇👉🦇Choose a breed🦇👉🦇";
       // console.log(label);
       document.querySelector("#breed-container").appendChild(label);
       const select = document.createElement("select");
-      select.id = "breed-select";
-      console.log(select);
+      select.id = "pet-breed";
+      //console.log(select);
       document.querySelector("#breed-container").appendChild(select);
+      const option = document.createElement("option");
+      option.value = "";
+      option.innerText = "🐩🐩Choose a breed🐩🐩";
+      document.querySelector("#pet-breed").appendChild(option);
     });
   /*
     <section id="breed-container">
     <label for="pet-breed">Choose a breed:</label> ✅
 
-  <select id="pet-breed">
-    <option value="">--Please choose an option--</option>
+  <select id="pet-breed">✅
+    <option value="">--Please choose an option--</option>✅
   </select>
   </section>
   */
