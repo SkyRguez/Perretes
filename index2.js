@@ -14,20 +14,22 @@ function onClick() {
     .then(toJsonResponse);
 }
 function onClickBreeds(_event) {
-  console.log(_event);
+  const LIST_DOGS_URL = "https://dog.ceo/api/breeds/list/all";
+  fetch(LIST_DOGS_URL).then(toJson);
 }
 
 function toJson(apiResponse) {
   return apiResponse.json();
 }
 
+function makeImageFrom(dogUrl) {
+  const img = document.createElement("img");
+  img.alt = "perrito lindo";
+  img.src = dogUrl;
+  return img;
+}
+
 function toJsonResponse(jsonResponse) {
-  function makeImageFrom(dogUrl) {
-    const image = document.createElement("img");
-    img.alt = "perrito lindo";
-    img.src = dogUrl;
-    return image;
-  }
   const img = makeImageFrom(jsonResponse.message);
   document.querySelector(".doggos").appendChild(img);
 }
