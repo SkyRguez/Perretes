@@ -15,7 +15,12 @@ function onClick() {
 }
 function onClickBreeds(_event) {
   const LIST_DOGS_URL = "https://dog.ceo/api/breeds/list/all";
-  fetch(LIST_DOGS_URL).then(toJson);
+  fetch(LIST_DOGS_URL)
+    .then(toJson)
+    .then(function(jsonResponse) {
+      const breeds = jsonResponse.message;
+      console.log(breeds);
+    });
 }
 
 function toJson(apiResponse) {
@@ -30,6 +35,7 @@ function makeImageFrom(dogUrl) {
 }
 
 function toJsonResponse(jsonResponse) {
+  console.log(jsonResponse.message);
   const img = makeImageFrom(jsonResponse.message);
   document.querySelector(".doggos").appendChild(img);
 }
