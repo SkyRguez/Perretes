@@ -26,15 +26,20 @@ function onClickBreeds(_event) {
       label.innerText = "Choose a breed";
       // console.log(label);
       document.querySelector("#breed-container").appendChild(label);
+      const select = document.createElement("select");
+      select.id = "breed-select";
+      console.log(select);
+      document.querySelector("#breed-container").appendChild(select);
     });
   /*
     <section id="breed-container">
-    <label for="pet-breed">Choose a breed:</label>
+    <label for="pet-breed">Choose a breed:</label> ✅
 
   <select id="pet-breed">
     <option value="">--Please choose an option--</option>
   </select>
-  </section>*/
+  </section>
+  */
 }
 
 function toJson(apiResponse) {
